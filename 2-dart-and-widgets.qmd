@@ -1,0 +1,58 @@
+---
+subtitle: Lesson title
+date: 2024-10-02
+title-logo: figs/flutter-logo.svg
+toc: false
+---
+
+# Dart
+
+## Dart is still evolving
+
+**2010** — Designed by Lars Bak et Kasper Lund
+
+**2011** — Version 1.0
+
+**2014** — ECMA standard
+
+**2017** — Flutter
+
+**2018** — Version 2.0 (null safety)
+
+**2023** — Version 3.0 (records, pattern matching)
+
+## Pure Dart
+
+Quick snippets online on [Dart Pad][dartpad].
+
+[dartpad]: https://dartpad.dev/
+
+In IntelliJ:
+
+- Choose Dart instead of Flutter
+- Dart SDK is in  
+  `/path/to/flutter/bin/cache/dart-sdk`
+
+## Dart Tutorial
+
+<https://dart.dev/language>
+
+- Language, from *Introduction* to *Null safety*  
+  (you can skip *Patterns* in a first read)
+- In Core libraries, skim through `dart:core`,  
+  especially the *Collections*.
+
+You can test your knowledge through exercises and quizzes at <https://dart-tutorial.com/> (end of each section)
+
+## Active Learning
+
+> If you want to master something, teach it!  
+— Attributed to Richard P. Feynman
+
+# Flutter Widget Basics
+
+## Demo
+
+A (simplified) Todo list app from scratch
+
+[Questions?]{.r-fit-text}

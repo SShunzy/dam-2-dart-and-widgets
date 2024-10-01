@@ -1,0 +1,15 @@
+title: Mobile App Development
+author: Cyril Soldani
+date-format: long
+toc: true
+toc-depth: 1
+format:
+  revealjs:
+    width: 1280
+    height: 720
+    menu: false
+    theme: [default, style.scss]
+    template-partials:
+      - title-slide.html
+    revealjs-plugins:
+      - RevealLoadContent

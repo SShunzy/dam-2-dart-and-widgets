@@ -1,0 +1,44 @@
+/*-- scss:defaults --*/
+
+$font-family-sans-serif: Montserrat, "Source Sans Pro", Helvetica, sans-serif;
+$presentation-block-margin: 22px;
+$presentation-font-size-root: 44px;
+$presentation-font-smaller: 0.8;
+$presentation-line-height: 1.2;
+$presentation-title-slide-text-align: left;
+$code-block-font-size: 0.65em;
+
+/*-- scss:rules --*/
+
+#title-slide p.subtitle {
+    border-bottom: thin solid black;
+    padding-bottom: 0.5em;
+}
+
+#title-slide .logos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 160px;
+}
+
+#title-slide .logos img {
+    height: 100%;
+}
+
+.reveal .slide.level2 p > code {
+    font-size: 0.93em;
+}
+
+.reveal .slide.level2 ul li,
+.reveal .slide.level2 ol li {
+    margin-top: 0.2em;
+}
+
+.reveal .slide.level2 p + ul {
+    margin-top: calc(-1 * $presentation-block-margin - 0.2em);
+}
+
+.reveal .slide.level2 li li {
+    font-size: 0.9em;
+}
