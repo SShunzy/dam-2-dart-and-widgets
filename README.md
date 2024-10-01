@@ -8,3 +8,5 @@ While reading the [Dart language documentation][dartlang], note anything new or 
 2. Adapt the Quarto file to add a slide about your topic.
 3. Commit the change (closing corresponding issue in the message). Push it on your own fork.
 4. Do a push request on this project.
+
+[dartlang]: https://dart.dev/language
