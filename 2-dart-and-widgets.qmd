@@ -65,4 +65,17 @@ according to given instructions.
 
 A (simplified) Todo list app from scratch
 
+## Layout Exercise
+
+Have a look at common layout widgets:  
+`Column`, `Row`, `Stack`, `Container`, `Padding`, and `SizedBox`.
+
+Write an example App that use them all.
+
+- Vary alignment, padding, and margins.
+- Keep the code clean!
+- Use your IDE refactoring features.
+
+---
+
 [Questions?]{.r-fit-text}
