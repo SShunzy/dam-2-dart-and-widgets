@@ -47,7 +47,17 @@ You can test your knowledge through exercises and quizzes at <https://dart-tutor
 ## Active Learning
 
 > If you want to master something, teach it!  
-— Attributed to Richard P. Feynman
+— Richard P. Feynman
+
+Note any topic new or interesting to you.
+
+Update the slides at  
+<https://github.com/cffs/dam-2-dart-and-widgets>  
+according to given instructions.
+
+<!-- Add new slides about Dart following this line -->
+
+<!-- End of Dart feature slides -->
 
 # Flutter Widget Basics
 
