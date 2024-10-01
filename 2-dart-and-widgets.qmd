@@ -1,5 +1,5 @@
 ---
-subtitle: Lesson title
+subtitle: Dart and Widget Basics
 date: 2024-10-02
 title-logo: figs/flutter-logo.svg
 toc: false
