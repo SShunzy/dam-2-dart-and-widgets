@@ -124,6 +124,30 @@ Parent g(Parent? p) {
 }
 ```
 
+## Cascade notation (.. permet de récupérer l'objet renvoyé par la première instruction et d'y appliquer plusieurs opérations)
+```
+var paint = Paint()
+  ..color = Colors.black
+  ..strokeCap = StrokeCap.round
+  ..strokeWidth = 5.0;
+```
+
+# Cascade notation : Null test (l'opérateur ?.. vérifie que l'objet renvoyé n'est pas null, les opérations suivantes sont annulées dans ce cas)
+```
+querySelector('#confirm') // Get an object.
+  ?..text = 'Confirm' // Use its members.
+  ..classes.add('important')
+  ..onClick.listen((e) => window.alert('Confirmed!'))
+  ..scrollIntoView();
+```
+
+# Cascade notation : avertissement -> La première commande doit renvoyer un objet (ici WritableStream() renvoie null, donc la chaine est cassée)
+```
+var sb = StringBuffer();
+sb.write('foo')
+  ..write('bar'); // Error: method 'write' isn't defined for 'void'.
+```
+
 <!-- End of Dart feature slides -->
 
 # Flutter Widget Basics
