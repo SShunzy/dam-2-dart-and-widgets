@@ -70,6 +70,41 @@ If the temperature variable is never used, then the expensive readThermometer() 
 late String temperature = readThermometer(); // Lazily initialized.
 ```
 
+
+## Named Constructors
+
+```dart
+class Student {
+  String name;
+  Student(this.name) {}
+
+  // Constructeur nommé qui appelle celui par défaut
+  Student.anonymous() : this("Smith");
+  
+  String toString(){
+    return this.name;
+  }
+}
+
+void main(){
+  var theQ = Student("TheQ");
+  print(theQ);
+  var anonymous = Student.anonymous();
+  print(anonymous);
+  
+## Initialize a final field in a constructor
+
+```dart
+class MyClass {
+  final String _s = "Hello";
+  final int _i;
+
+  // MyClass(i) { _i = i; } error, _i is final
+  // MyClass(i) : _i = i; OK, and flexible
+  MyClass(this._i);
+}
+```
+
 ## Smart conditional branches
 
 ```dart
