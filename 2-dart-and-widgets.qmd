@@ -120,6 +120,27 @@ Parent g(Parent? p) {
 }
 ```
 
+## Null Safety
+
+Sometimes, when you use a Dart application, you might get a variable that contains null.
+This will cause a runtime error.
+
+Just like Javascript, Dart implements a Null Safety to specify if a value can be null or, in the opposite, can not be null.
+To implements a null safety, add a "?" to the type of the variable: 
+
+```dart
+// Using null safety:
+void makeCoffee(String coffee, [String? dairy]) {
+  if (dairy != null) {
+    print('$coffee with $dairy');
+  } else {
+    print('Black $coffee');
+  }
+}
+```
+This code does not cause a runtime error (unless coffee is null).
+
+
 ## Cascade notation (.. permet de récupérer l'objet renvoyé par la première instruction et d'y appliquer plusieurs opérations)
 ```
 var paint = Paint()
