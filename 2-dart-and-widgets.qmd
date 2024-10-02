@@ -77,6 +77,37 @@ void main(){
   print(theQ);
   var anonymous = Student.anonymous();
   print(anonymous);
+  
+## Initialize a final field in a constructor
+
+```dart
+class MyClass {
+  final String _s = "Hello";
+  final int _i;
+
+  // MyClass(i) { _i = i; } error, _i is final
+  // MyClass(i) : _i = i; OK, and flexible
+  MyClass(this._i);
+}
+```
+
+
+## Smart conditional branches
+
+```dart
+class Parent {}
+
+class Child extends Parent { int i = 42; }
+
+void f(Parent? p) {
+  if (p is Child) {
+    print(p.i); // No need for cast
+  }
+}
+
+Parent g(Parent? p) {
+  if (p == null) { return Parent(); }
+  return p; // Dart knows p is not null here
 }
 ```
 
