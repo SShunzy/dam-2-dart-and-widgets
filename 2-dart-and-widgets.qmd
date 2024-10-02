@@ -59,39 +59,35 @@ according to given instructions.
 
 ## Late variables
 
-The late modifier has two use cases:
+`late` modifier 2 use cases:
 
-- Declaring a non-nullable variable that's initialized after its declaration.
-- Lazily initializing a variable.
+- For non-nullable variable initialized after declaration
+- For lazily initializing a variable
 
-If the temperature variable is never used, then the expensive readThermometer() function is never called
+If `temperature` is never used, then expensive `readThermometer()` is never called
 
 ```dart
-late String temperature = readThermometer(); // Lazily initialized.
+// Lazy initialization: call readThermometer() on first use
+late String temperature = readThermometer();
 ```
-
 
 ## Named Constructors
 
 ```dart
 class Student {
   String name;
-  Student(this.name) {}
+  Student(this.name);
 
-  // Constructeur nommé qui appelle celui par défaut
+  // Named constructor calling default one
   Student.anonymous() : this("Smith");
-  
-  String toString(){
-    return this.name;
-  }
 }
 
-void main(){
+void main() {
   var theQ = Student("TheQ");
-  print(theQ);
   var anonymous = Student.anonymous();
-  print(anonymous);
-  
+}
+```
+
 ## Initialize a final field in a constructor
 
 ```dart
