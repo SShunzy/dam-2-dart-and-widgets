@@ -57,6 +57,46 @@ according to given instructions.
 
 <!-- Add new slides about Dart following this line -->
 
+
+# Async methods
+
+Async methods are used to avoid explicit callback.
+When an async method is called, code of the method is executed until it is blocked.
+But the Dart engine, will not wait, it continue with the rest of the code, and come back to the async method when ready.
+
+3 keys words :
+- Futur<>
+- async
+- await
+
+## Syntax
+
+```dart
+Future<void> insertDB(Person p) async {
+  await Oracle.insert("insert into people values $p.name, $p.age");
+}
+```
+
+```dart
+const oneSecond = Duration(seconds: 1);
+
+Future<void> printWithDelay(String message) async {
+  await Future.delayed(oneSecond);
+  print(message);
+}
+```
+
+```dart
+Future<void> printWithDelay(String message) {
+  return Future.delayed(oneSecond).then((_) {
+    print(message);
+  });
+}
+```
+
+The 2 code blocks above are equivalent, but differ on their declaration.
+
+
 <!-- End of Dart feature slides -->
 
 # Flutter Widget Basics
