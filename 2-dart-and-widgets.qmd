@@ -57,6 +57,92 @@ according to given instructions.
 
 <!-- Add new slides about Dart following this line -->
 
+## Late variables
+
+`late` modifier 2 use cases:
+
+- For non-nullable variable initialized after declaration
+- For lazily initializing a variable
+
+If `temperature` is never used, then expensive `readThermometer()` is never called
+
+```dart
+// Lazy initialization: call readThermometer() on first use
+late String temperature = readThermometer();
+```
+
+## Named Constructors
+
+```dart
+class Student {
+  String name;
+  Student(this.name);
+
+  // Named constructor calling default one
+  Student.anonymous() : this("Smith");
+}
+
+void main() {
+  var theQ = Student("TheQ");
+  var anonymous = Student.anonymous();
+}
+```
+
+## Initialize a final field in a constructor
+
+```dart
+class MyClass {
+  final String _s = "Hello";
+  final int _i;
+
+  // MyClass(i) { _i = i; } error, _i is final
+  // MyClass(i) : _i = i; OK, and flexible
+  MyClass(this._i);
+}
+```
+
+## Smart conditional branches
+
+```dart
+class Parent {}
+
+class Child extends Parent { int i = 42; }
+
+void f(Parent? p) {
+  if (p is Child) {
+    print(p.i); // No need for cast
+  }
+}
+
+Parent g(Parent? p) {
+  if (p == null) { return Parent(); }
+  return p; // Dart knows p is not null here
+}
+```
+
+## Cascade notation (.. permet de récupérer l'objet renvoyé par la première instruction et d'y appliquer plusieurs opérations)
+```
+var paint = Paint()
+  ..color = Colors.black
+  ..strokeCap = StrokeCap.round
+  ..strokeWidth = 5.0;
+```
+
+# Cascade notation : Null test (l'opérateur ?.. vérifie que l'objet renvoyé n'est pas null, les opérations suivantes sont annulées dans ce cas)
+```
+querySelector('#confirm') // Get an object.
+  ?..text = 'Confirm' // Use its members.
+  ..classes.add('important')
+  ..onClick.listen((e) => window.alert('Confirmed!'))
+  ..scrollIntoView();
+```
+
+# Cascade notation : avertissement -> La première commande doit renvoyer un objet (ici WritableStream() renvoie null, donc la chaine est cassée)
+```
+var sb = StringBuffer();
+sb.write('foo')
+  ..write('bar'); // Error: method 'write' isn't defined for 'void'.
+```
 
 # Async methods
 
@@ -95,7 +181,6 @@ Future<void> printWithDelay(String message) {
 ```
 
 The 2 code blocks above are equivalent, but differ on their declaration.
-
 
 <!-- End of Dart feature slides -->
 
