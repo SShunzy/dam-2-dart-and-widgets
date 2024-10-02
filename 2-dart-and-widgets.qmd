@@ -57,6 +57,19 @@ according to given instructions.
 
 <!-- Add new slides about Dart following this line -->
 
+## Initialize a final field in a constructor
+
+```dart
+class MyClass {
+  final String _s = "Hello";
+  final int _i;
+
+  // MyClass(i) { _i = i; } error, _i is final
+  // MyClass(i) : _i = i; OK, and flexible
+  MyClass(this._i);
+}
+```
+
 ## Smart conditional branches
 
 ```dart
